@@ -1,0 +1,9 @@
+.user-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.text-wrap {
+  word-break: break-all; /* or word-break: break-word; */
+}

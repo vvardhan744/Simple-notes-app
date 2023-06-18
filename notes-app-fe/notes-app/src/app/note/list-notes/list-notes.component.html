@@ -1,0 +1,35 @@
+<div class="col-md-12 user-container">
+  <h2 style="margin: auto">Note Details</h2>
+  <div style="margin-left: 75%;">Logged In as: <b>{{user}}</b><span class="ml-2" *ngIf="user!==null"><button
+        class="btn btn-secondary" (click)="logout()">Logout</button></span></div>
+
+  <button class="btn btn-danger" style="width:100px" (click)="addNote()"> Add Note</button>
+
+  <span class="mx-auto"><input id="myInput" type="text" placeholder="Search Notes Here..."></span>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th class="hidden">Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+      <tr *ngFor="let note of Notes">
+        <td><input type="checkbox" name="status" id="status"></td>
+        <td>{{note._id}}</td>
+        <td>{{note.title}}</td>
+        <td class="text-wrap">{{note.description}}</td>
+        <td>{{note.date}}</td>
+
+        <td><button class="btn btn-success" (click)="deleteNote(note)"> Delete</button></td>
+        <td><button class="btn btn-success" (click)="editNote(note)"> Edit</button></td>
+        <td><button class="btn btn-success" (click)="editNote(note)"> Share</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
